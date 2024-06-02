@@ -9,7 +9,7 @@ In these experiments, we generated samples from linear additive gaussian SCMs go
 
 **Summary of Results.** CCPG enjoys both the best sample efficiency of constraint-based methods (thus should be more accurate with limited samples) and runtime efficiency of hybrid methods (which allows scaling to larger graphs).
 
-**Runtime Analysis**. We generated 100k samples across graphs of different sizes and reported the runtime averged across five runs. The figure below show that CCPG is as fast as hybrid methods (GSP) and extremely more efficient than constraint-based methods (PC, FCI, and RFCI), who can only scale to 20 nodes with reasonable runtime.
+**Runtime Analysis**. We generated 100k samples across graphs of different sizes and reported the runtime averaged across five runs. The figure below show that CCPG is as fast as hybrid methods (GSP) and extremely more efficient than constraint-based methods (PC, FCI, and RFCI), who can only scale to 20 nodes with reasonable runtime.
 
 <ins>_Implementation Detail._</ins> For FCI and RFCI, we used pcalg [9]'s implementations, which are written in R with C++ accelerations. For PC and GSP, we used causaldag [10]'s implementations, which are written in python. Our method, CCPG, is written in python. The acceleration of R (with C++) can be viewed by comparing two implementations of PC (stable) below. 
 
@@ -17,9 +17,9 @@ In these experiments, we generated samples from linear additive gaussian SCMs go
   <img src="figures/runtime.png" width="300">
 </p>
 
-**Sample Complexity Analysis**. On a 10-node graph, for each method, we increased the number of samples until it finds the groud-truth DAG (we repeated this procedure for five runs). The figure below show that CCPG requires the least number of samples to recover the true graph. 
+**Sample Complexity Analysis**. On a 10-node graph, for each method, we increased the number of samples until it finds the ground-truth DAG (we repeated this procedure for five runs). The figure below show that CCPG requires the least number of samples to recover the true graph. 
 
-Constraint-based methods like PC, FCI and RFCI are more sample efficient than hybrid methods, why being much more runtime inefficient. In comparison, CCPG, with its polynomial-number of CI test guarantees, enjoys low sample complexity and low runtime complexity.
+Constraint-based methods like PC, FCI and RFCI are more sample efficient than hybrid methods, while being much more runtime inefficient. In comparison, CCPG, with its polynomial-number of CI test guarantees, enjoys low sample complexity and low runtime complexity.
 
 <ins>_Remark on causal sufficiency._</ins> Among the constraint-based methods, we marked the ones that do not assume causal sufficiency. These methods require more samples compared to e.g., PC, as the underlying system we test on satisfies causal sufficiency.
 
