@@ -1,4 +1,6 @@
 # Learning Causal Consistent Partition Graph (CCPG)
+**Code for paper: Causal Discovery with Fewer Conditional Independence Tests (https://arxiv.org/abs/2406.01823) at ICML 2024.**
+
 
 Source code and results comparing CCPG versus other constraint-based and hybrid causal discovery methods that rely on conditional independence tests. 
 - The constraint-based methods we included are: PC [1], FCI [2], and RFCI [3] (we use their order independent variants from [4], a.k.a., "stable" versions).
